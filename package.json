@@ -1,0 +1,22 @@
+{
+  "name": "mindfulbot",
+  "version": "1.0.0",
+  "description": "Your mindful coworker.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mindfulness",
+    "compassion",
+    "chatbot",
+    "slackbot",
+    "meditation"
+  ],
+  "author": "Alex Bierach",
+  "license": "MIT",
+  "dependencies": {
+    "beepboop-botkit": "^1.2.0",
+    "botkit": "^0.1.1"
+  }
+}
