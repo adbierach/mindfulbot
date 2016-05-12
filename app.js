@@ -41,6 +41,7 @@ controller.hears('metta', ['direct_message', 'direct_mention', 'mention'], funct
 });
 
 
+
 controller.hears('breathe', ['direct_message', 'direct_mention', 'mention'], function(bot,message) {
 	bot.startConversation(message, function(err,convo) {
 		convo.ask('Hello friend, what a perfect time to breathe. How long would you like to practice for? Reply with a number 1-10.', [
