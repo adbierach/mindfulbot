@@ -4,7 +4,7 @@
   "description": "Your mindful coworker.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./src"
   },
   "keywords": [
     "mindfulness",
@@ -16,7 +16,9 @@
   "author": "Alex Bierach",
   "license": "MIT",
   "dependencies": {
-    "beepboop-botkit": "^1.2.0",
     "botkit": "^0.1.1"
+  },
+  "engines": {
+    "node": "6.1.0"
   }
 }
