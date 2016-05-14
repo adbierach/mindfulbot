@@ -1,5 +1,7 @@
 var Botkit = require('botkit');
 
+//adding this to keep heroku dyno awake...not sure if I will keep it
+var http = require('http');
 
 // Expect a SLACK_TOKEN environment variable
 var slackToken = process.env.SLACK_TOKEN
