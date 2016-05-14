@@ -1,0 +1,13 @@
+{
+    "name": "Mindfulbot",
+    "description": "Your mindful coworker.",
+    "keywords": ["slack", "mindful"],
+    "repository": "https://github.com/adbierach/mindfulbot",
+    "env": {
+        "SLACK_TOKEN": {
+            "description": "Slack bot token"
+        }
+    },
+    "addons": [
+    ]
+}

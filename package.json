@@ -2,9 +2,9 @@
   "name": "mindfulbot",
   "version": "1.0.0",
   "description": "Your mindful coworker.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./src"
+    "start": "node index.js"
   },
   "keywords": [
     "mindfulness",
