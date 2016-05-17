@@ -16,7 +16,8 @@
   "author": "Alex Bierach",
   "license": "MIT",
   "dependencies": {
-    "botkit": "^0.1.1"
+    "botkit": "^0.1.1",
+    "redis": "^2.6.0-2"
   },
   "engines": {
     "node": "6.1.0"
