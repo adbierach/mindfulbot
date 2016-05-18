@@ -194,8 +194,9 @@ controller.on('rtm_close',function(bot) {
   // you may want to attempt to re-open
 });
 
-controller.hears('hello','direct_message',function(bot,message) {
-  bot.reply(message,'Hello!');
+controller.hears('hello', ['direct_message', 'direct_mention', 'mention'], function(bot,message) {
+	bot.reply(message, 'Hello yourself!');
+	
 });
 
 controller.hears('^stop','direct_message',function(bot,message) {
