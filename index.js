@@ -120,6 +120,7 @@ var port = process.env.PORT || process.env.port;
 
 if (!process.env.clientId || !process.env.clientSecret || !port) {
   console.log('Error: Specify clientId clientSecret and port in environment');
+  console.log('Log port', process.env.PORT)
   process.exit(1);
 }
 
