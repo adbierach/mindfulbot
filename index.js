@@ -465,46 +465,46 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
 
 
 // receive an interactive message, and reply with a message that will replace the original
-controller.on('interactive_message_callback', function(bot, message) {
+// controller.on('interactive_message_callback', function(bot, message) {
 
-    // check message.actions and message.callback_id to see what action to take...
-    if (message.callback_id !== '123') {
-      console.log('naaaahhhh man');
-      return;
-    }
+//     // check message.actions and message.callback_id to see what action to take...
+//     if (message.callback_id === '123') {
+//       console.log('naaaahhhh man');
+//       return;
+//     }
 
-    bot.replyInteractive(message, {
-        text: '...',
-        attachments: [
-            {
-                title: 'My buttons',
-                callback_id: '123',
-                attachment_type: 'default',
-                actions: [
-                    {
-                        "name":"yes",
-                        "text": "Yes!",
-                        "value": "yes",
-                        "type": "button",
-                    },
-                    {
-                       "text": "No!",
-                        "name": "no",
-                        "value": "delete",
-                        "style": "danger",
-                        "type": "button",
-                        "confirm": {
-                          "title": "Are you sure?",
-                          "text": "This will do something!",
-                          "ok_text": "Yes",
-                          "dismiss_text": "No"
-                        }
-                    }
-                ]
-            }
-        ]
-    });
+//     bot.replyInteractive(message, {
+//         text: '...',
+//         attachments: [
+//             {
+//                 title: 'My buttons',
+//                 callback_id: '123',
+//                 attachment_type: 'default',
+//                 actions: [
+//                     {
+//                         "name":"yes",
+//                         "text": "Yes!",
+//                         "value": "yes",
+//                         "type": "button",
+//                     },
+//                     {
+//                        "text": "No!",
+//                         "name": "no",
+//                         "value": "delete",
+//                         "style": "danger",
+//                         "type": "button",
+//                         "confirm": {
+//                           "title": "Are you sure?",
+//                           "text": "This will do something!",
+//                           "ok_text": "Yes",
+//                           "dismiss_text": "No"
+//                         }
+//                     }
+//                 ]
+//             }
+//         ]
+//     });
 
-});
+// });
 
 
