@@ -125,6 +125,7 @@ if (!process.env.clientId || !process.env.clientSecret || !port) {
 
 
 var controller = Botkit.slackbot({
+	interactive_replies: true,
   storage: redis_store,
 }).configureSlackApp(
   {
@@ -388,10 +389,12 @@ controller.storage.teams.all(function(err,teams) {
 
 controller.hears('interactive', 'direct_message', function(bot, message) {
 
-    bot.reply(message, {
+	bot.startConversation(message, function(err, convo) {
+
+    convo.ask({
         attachments:[
             {
-                title: 'Do you want to interact with my buttons?',
+                title: 'Do you want to proceed?',
                 callback_id: '123',
                 attachment_type: 'default',
                 actions: [
@@ -410,7 +413,54 @@ controller.hears('interactive', 'direct_message', function(bot, message) {
                 ]
             }
         ]
-    });    
+    },[
+        {
+            pattern: "yes",
+            callback: function(reply, convo) {
+                convo.say('FABULOUS!');
+                convo.next();
+                // do something awesome here.
+            }
+        },
+        {
+            pattern: "no",
+            callback: function(reply, convo) {
+                convo.say('Too bad');
+                convo.next();
+            }
+        },
+        {   
+            default: true,
+            callback: function(reply, convo) {
+                // do nothing
+            }
+        }
+    ]);
+});
+
+    // bot.reply(message, {
+    //     attachments:[
+    //         {
+    //             title: 'Do you want to interact with my buttons?',
+    //             callback_id: '123',
+    //             attachment_type: 'default',
+    //             actions: [
+    //                 {
+    //                     "name":"yes",
+    //                     "text": "Yes",
+    //                     "value": "yes",
+    //                     "type": "button",
+    //                 },
+    //                 {
+    //                     "name":"no",
+    //                     "text": "No",
+    //                     "value": "no",
+    //                     "type": "button",
+    //                 }
+    //             ]
+    //         }
+    //     ]
+    // });    
 });
 
 
@@ -456,3 +506,5 @@ controller.on('interactive_message_callback', function(bot, message) {
     });
 
 });
+
+
